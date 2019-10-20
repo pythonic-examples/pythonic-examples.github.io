@@ -1,1 +1,1248 @@
-test
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>Pythonic</title>
+
+    <link href="/css/custom.css" rel="stylesheet">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- Plugin CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="/css/creative.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <meta name="google-site-verification" content="9Z9BIVrkARN44tBXnPZWB8OhpwzvNfxWdZJ2K9DBIBQ" />
+
+</head>
+
+<body id="page-top">
+
+<link rel="stylesheet" href="/css/pygments.css">
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="/">Pythonic</a>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+
+
+<section id="idioms">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Idioms</h2>
+                    </div>
+                    <div class="panel-body">
+                        <input id="filter-idioms" type="text" name="" value="" placeholder="Find idioms">
+                        <div class="list-group" id="list-idioms">
+                            <a href="#list-comprehension" class="list-group-item idiom-item performance readability" id="list-comprehension-link"><b>List comprehension</b></a>
+                            <a href="#dict-comprehension" class="list-group-item idiom-item performance readability" id="dict-comprehension-link"><b>Dict comprehension</b></a>
+                            <a href="#decorator" class="list-group-item idiom-item readability" id="decorator-link"><b>Decorator</b></a>
+                            <a href="#magic-methods" class="list-group-item idiom-item readability" id="magic-methods-link"><b>Magic methods</b></a>
+                            <a href="#finally-block" class="list-group-item idiom-item readability" id="finally-block-link"><b>Finally block</b></a>
+                            <a href="#with-statement" class="list-group-item idiom-item readability" id="with-statement-link"><b>With statement</b></a>
+                            <a href="#enumerate" class="list-group-item idiom-item readability" id="enumerate-link"><b>enumerate</b></a>
+                            <a href="#generators" class="list-group-item idiom-item performance" id="generators-link"><b>Generators</b></a>
+                            <!--<a href="#yield-keyword" class="list-group-item idiom-item performance" id="yield-keyword-link"><b>Yield</b></a>-->
+                            <a href="#generator-expressions" class="list-group-item idiom-item performance readability" id="generator-expressions-link"><b>Generator expressions</b></a>
+                            <a href="#defaultdict" class="list-group-item idiom-item performance readability" id="defaultdict-link">collections.<b>defaultdict</b></a>
+                            <a href="#namedtuple" class="list-group-item idiom-item readability" id="namedtuple-link">collections.<b>namedtuple</b></a>
+                            <a href="#deque" class="list-group-item idiom-item readability performance" id="deque-link">collections.<b>deque</b></a>
+                            <a href="#counter" class="list-group-item idiom-item readability" id="counter-link">collections.<b>Counter</b></a>
+                            <a href="#classmethod-dec" class="list-group-item idiom-item readability" id="classmethod-dec-link"><b>@classmethod</b></a>
+                            <a href="#staticmethod-dec" class="list-group-item idiom-item readability" id="staticmethod-dec-link"><b>@staticmethod</b></a>
+                            <a href="#zip" class="list-group-item idiom-item readability performance" id="zip-link"><b>zip</b></a>
+                            <a href="#itertools" class="list-group-item idiom-item readability performance" id="itertools-link"><b>itertools</b></a>
+
+                            <!--<a href="#itertools-izip" class="list-group-item idiom-item readability performance" id="itertools-izip-link">itertools.<b>izip</b></a>
+                            <a href="#itertools-iziplong" class="list-group-item idiom-item readability performance" id="itertools-iziplong-link">itertools.<b>izip_longest</b></a>
+                            <a href="#itertools-starmap" class="list-group-item idiom-item" id="itertools-starmap-link">itertools.<b>starmap</b></a>
+                            <a href="#itertools-tee" class="list-group-item idiom-item" id="itertools-tee-link">itertools.<b>tee</b></a>
+                            <a href="#itertools-groupby" class="list-group-item idiom-item readability" id="itertools-groupby-link">itertools.<b>groupby</b></a>-->
+                            <a href="#functools-total_ordering" class="list-group-item idiom-item readability" id="functools-total_ordering-link">functools.<b>total_ordering</b></a>
+                            <!--<a href="#dict" class="list-group-item idiom-item readability performance" id="dict-link"><b>dictionaries</b></a>
+                            <a href="#lambda" class="list-group-item idiom-item readability" id="lambda-link"><b>lambda</b></a>
+                            <a href="#seq-op" class="list-group-item idiom-item performance" id="seq-op-link"><b>* and + for sequences</b></a>
+                            <a href="#str-op" class="list-group-item idiom-item performance" id="str-op-link"><b>Pythonic operations over strings</b></a>-->
+                            <!--<a href="#map" class="list-group-item idiom-item readability" id="map-link"><b>map</b></a>
+                            <a href="#filter" class="list-group-item idiom-item readability" id="filter-link"><b>filter</b></a>
+                            <a href="#reduce" class="list-group-item idiom-item readability" id="reduce-link"><b>reduce</b></a>-->
+                        </div>
+                        <h4>Tags</h4>
+                        <span class="label label-primary tag-filter">All</span>
+                        <span class="label label-default tag-filter">Readability</span>
+                        <span class="label label-default tag-filter">Performance</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <!-- BEGIN List comprehension -->
+                <div class="panel panel-primary idiom-panel" id="list-comprehension-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            List comprehensions
+                            <span class="label label-default">Readability</span>
+                            <span class="label label-default">Performance</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>A concise way to create new lists from other sequences, for example applying some operations to each element (like ‘map’ in other languages), or selecting elements that satisfy a certain condition (like ‘filter’ in other languages).</p>
+                        <div class="highlight"><pre><span></span><span class="n">list_comp</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</pre></div>
+
+                        <h3>No Pythonic</h3>
+                        <div class="highlight"><pre><span></span><span class="n">result_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000000</span><span class="p">):</span>
+    <span class="n">result_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
+</pre></div>
+
+                        <h3>Pythonic way</h3>
+                        <div class="highlight"><pre><span></span><span class="n">result_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">el</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000000</span><span class="p">)]</span>
+</pre></div>
+
+                        <p>It is more readable and also improve the performance:</p>
+                        <div class="highlight"><pre><span></span><span class="c1"># No pythonic</span>
+<span class="mf">0.655946016312</span> <span class="n">seconds</span>
+<span class="c1"># Pythonic</span>
+<span class="mf">0.255126953125</span> <span class="n">seconds</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://www.python.org/dev/peps/pep-0202/">PEP 202 -  List Comprehensions</a> </p>
+                    </div>
+                </div>
+                <!-- END List comprehension -->
+
+                <!-- BEGIN Dict comprehension -->
+                <div class="panel panel-primary idiom-panel" id="dict-comprehension-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            Dict comprehensions
+                            <span class="label label-default">Readability</span>
+                            <span class="label label-default">Performance</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Is an easy and elegant way to construct a dictionary. Is a similar case as <em>list comprehensions</em> </p>
+                        <div class="highlight"><pre><span></span><span class="n">dict_compr</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">k</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)}</span>
+</pre></div>
+
+                        <h3>No Pythonic</h3>
+                        <div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">k</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+
+                        <h3>Pythonic way</h3>
+                        <div class="highlight"><pre><span></span><span class="n">dict_compr</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">k</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10000</span><span class="p">)}</span>
+</pre></div>
+
+                        <p>It is more readable and also improve the performance:</p>
+                        <div class="highlight"><pre><span></span><span class="c1"># No Pythonic</span>
+<span class="mf">0.00253295898438</span> <span class="n">seconds</span>
+<span class="c1"># Pythonic</span>
+<span class="mf">0.00185489654541</span> <span class="n">seconds</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://www.python.org/dev/peps/pep-0274/">PEP 274 - Dict Comprehensions</a> </p>
+                    </div>
+                </div>
+                <!-- END Dict comprehension -->
+
+                <!-- BEGIN Decorators -->
+                <div class="panel panel-primary idiom-panel" id="decorator-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            Decorators
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>A decorator is the name used for a software design pattern. Decorators dynamically alter the functionality of a function, method, or class without having to directly use subclasses or change the source code of the function being decorated. [1]</p>
+                        <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">time_dec</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">wrap</span><span class="p">(</span><span class="o">*</span><span class="n">arg</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">init_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">arg</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="o">-</span><span class="n">init_time</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">res</span>
+    <span class="k">return</span> <span class="n">wrap</span>
+
+<span class="nd">@time_dec</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="n">out</span> <span class="o">+</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+<span class="nd">@time_dec</span>
+<span class="k">def</span> <span class="nf">bar</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+
+<span class="n">foo</span><span class="p">(</span><span class="mi">10000000</span><span class="p">)</span>
+<span class="n">bar</span><span class="p">(</span><span class="mi">10000000</span><span class="p">)</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">OUTPUT:</span>
+<span class="sd">foo 0.555375337600708</span>
+<span class="sd">bar 0.183899402618408</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href=https://wiki.python.org/moin/PythonDecorators>https://wiki.python.org/moin/PythonDecorators</a></p>
+                        <p>[2] <a href=https://www.python.org/dev/peps/pep-0318/>PEP 318 -- Decorators for Functions and Methods</a></p>
+                    </div>
+                </div>
+                <!-- END Decorators -->
+
+                <!-- BEGIN Magic methods -->
+                <div class="panel panel-primary idiom-panel" id="magic-methods-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            Magic methods
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Are special methods that can be invoked by special syntax [1]. For example:</p>
+                        <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rect</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">rect</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="n">rect</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rect</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">rect</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="n">rect</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rect</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">rect</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="n">rect</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+
+<span class="n">r1</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span> <span class="n">r1</span> <span class="o">&gt;</span> <span class="n">r2</span> <span class="p">)</span><span class="c1"># True</span>
+<span class="k">print</span><span class="p">(</span> <span class="n">r1</span> <span class="o">&lt;</span> <span class="n">r2</span> <span class="p">)</span><span class="c1"># False</span>
+<span class="k">print</span><span class="p">(</span> <span class="n">r1</span> <span class="o">==</span> <span class="n">r2</span> <span class="p">)</span> <span class="c1"># False</span>
+</pre></div>
+
+                        <p>That code in Python2 could be improved with the use of the decorator functools.total_ordering</p>
+                        <p>A complete list well documented can be found <a href="https://rszalski.github.io/magicmethods/">here</a></p>
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3.3/reference/datamodel.html#special-method-names">docs.python.org - Special Method Names</a> </p>
+                    </div>
+                </div>
+                <!-- END Decorators -->
+
+                <!-- BEGIN Finally block -->
+                <div class="panel panel-primary idiom-panel" id="finally-block-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            Finally Block
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Finally is a optional clause intended for cleaning-up actions. It is always executed before leaving the <em>try</em> statement. For example:</p>
+                        <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Division by zero not allowed!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;The result is&quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Goodbye :)&quot;</span><span class="p">)</span>
+
+<span class="n">divide</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># The result is 3</span>
+<span class="c1"># Goodbye :)</span>
+
+<span class="n">divide</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Division by zero not allowed!</span>
+<span class="c1"># Goodbye :)</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/tutorial/errors.html#defining-clean-up-actions">docs.python.org - Defining clean up actions</a> </p>
+                    </div>
+                </div>
+                <!-- END Finally block -->
+
+                <!-- BEGIN With statement -->
+                <div class="panel panel-primary idiom-panel" id="with-statement-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            With statement
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>The with statement allows you to execute two related operations as a pair, with a block of code in between [1]. Opening a file is the typical example. It opens the file in the <em>with</em> Statement and closes it when the block ends:</p>
+                        <div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;El_Quijote.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Sancho Panza&quot;</span><span class="p">)</span>
+</pre></div>
+
+                        <p>But there are more like threading.Lock for threads and you can define your owns context managers with the use of <em>__enter__</em> and <em>__exit__</em> methods in a class or with the use of contextlib library [2]. For example:</p>
+                        <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">File</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">file</span>
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="n">File</span><span class="p">(</span><span class="s2">&quot;my_file.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="http://preshing.com/20110920/the-python-with-statement-by-example/">The <em>with</em> statement by example</a> </p>
+                        <p>[2] <a href="https://docs.python.org/3/library/contextlib.html">contextlib - Utilities for with-statements contexts</a> </p>
+                        <p>[3] <a href="https://www.python.org/dev/peps/pep-0343/">PEP 343 -- The "with" Statement</a> </p>
+                    </div>
+                </div>
+                <!-- END With statement -->
+
+                <!-- BEGIN enumerate -->
+                <div class="panel panel-primary idiom-panel" id="enumerate-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            enumerate
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>The built-in enumerate returns a enumerate object from an object that can be iterable. The next method, return a tuple containing a count (from 0 by default) and the the next value of the iterable object. It is useful when you need the index of the iterable. For example:</p>
+                        <div class="highlight"><pre><span></span><span class="n">seasons</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Spring&#39;</span><span class="p">,</span> <span class="s1">&#39;Summer&#39;</span><span class="p">,</span> <span class="s1">&#39;Fall&#39;</span><span class="p">,</span> <span class="s1">&#39;Winter&#39;</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">seasons</span><span class="p">)))</span>
+<span class="c1"># [(0, &#39;Spring&#39;), (1, &#39;Summer&#39;), (2, &#39;Fall&#39;), (3, &#39;Winter&#39;)]</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/functions.html#enumerate">docs.python.org - enumerate built-in</a> </p>
+                        <p>[2] <a href="https://www.python.org/dev/peps/pep-0279/">PEP 279 - The enumerate() built-in function</a> </p>
+                    </div>
+                </div>
+                <!-- END enumerate -->
+
+                <!-- BEGIN Generators -->
+                <div class="panel panel-primary idiom-panel" id="generators-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            Generators
+                            <span class="label label-default">Performance</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Generator functions allow you to define a function that can be used as an iterator. For example:</p>
+                        <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">():</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">a</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+
+                        <p>You can also define a generator class with the use of <em>__iter__</em> and <em>__next__</em> magic methods</p>
+                        <p>A concise way of making generators are generator expressions: <a href="/catalogue#generator-expressions">Generator expressions</a> </p>
+                        <p>In the following example you can also see that can improve the performance because it doesn't build the full list in memory.</p>
+                        <p>For example:</p>
+                        <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_xrange</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># I should use range in Python3 or xrange in Python2</span>
+    <span class="c1"># But this is bit more intuitive for beginner Python programmers</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">i</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
+<span class="k">def</span> <span class="nf">my_range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="c1"># I should use range in Python2 for a list comprehension</span>
+    <span class="c1"># But this is bit more intuitive for beginner Python programmers</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">l</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">my_xrange</span><span class="p">(</span><span class="mi">10000000</span><span class="p">):</span>
+    <span class="k">pass</span>
+<span class="c1"># It took 0.514423131943 sec</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">my_range</span><span class="p">(</span><span class="mi">10000000</span><span class="p">):</span>
+    <span class="k">pass</span>
+<span class="c1"># It took 0.966587781906 sec</span>
+</pre></div>
+
+                        <p>To fully understand generators, you should understand the keyword <b>yield</b></p>
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://anandology.com/python-practice-book/iterators.html"> Iterators and Generators</a>  </p>
+                        <p>[2] <a href="https://wiki.python.org/moin/Generators"> Python Wiki - Generators</a>  </p>
+                        <p>[3] <a href="https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/"> Jeff Knupp - Yield and Generators</a>  </p>
+                    </div>
+                </div>
+                <!-- END Generators -->
+
+                <!-- BEGIN Yield -->
+                <div class="panel panel-primary idiom-panel" id="yield-keyword-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            Yield
+                            <span class="label label-default">Performance</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>The keyword <b>yield</b> allows you to write generators. It is used as a return statement, but when you run the funcion, it will just return a generator, the code won't run.</p>
+                        <p>Try to undertand the following example:</p>
+                        <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Fibonacci generator &quot;&quot;&quot;</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+       <span class="k">yield</span> <span class="n">b</span>
+       <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">fib</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>  <span class="c1"># &lt;generator object fib at 0x7f72dce25870&gt;</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">next</span><span class="p">())</span> <span class="c1"># 1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">next</span><span class="p">())</span> <span class="c1"># 1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">next</span><span class="p">())</span> <span class="c1"># 2</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="c1"># 3</span>
+<span class="c1"># 5</span>
+<span class="c1"># 8</span>
+<span class="c1"># &quot;Never&quot; ends</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://www.python.org/dev/peps/pep-0255/">PEP 255 - Simple generators</a> </p>
+                        <p>[2] <a href="https://jeffknupp.com/blog/2013/04/07/improve-your-python-yield-and-generators-explained/"> Jeff Knupp - Yield and Generators</a>  </p>
+                    </div>
+                </div>
+                <!-- END Yield -->
+
+                <!-- BEGIN Generator expressions -->
+                <div class="panel panel-primary idiom-panel" id="generator-expressions-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            Generator Expressions
+                            <span class="label label-default">Performance</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Generator expressions are a concise way to create generators. The syntax is the same as <b>list comprehensions</b> but are more memory efficient because don't store the whole list in memory</p>
+                        <div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://www.python.org/dev/peps/pep-0289/">PEP 289 - Generator Expressions</a> </p>
+                    </div>
+                </div>
+                <!-- END Generator expressions  -->
+
+                <!-- BEGIN defaultdict -->
+                <div class="panel panel-primary idiom-panel" id="defaultdict-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            collections.<b>defaultdict</b>
+                            <span class="label label-default">Performance</span>
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>defaultdict is a subclass of the built-in <em>dict</em> class. The functionality is the same as a dictionary. The powerful is that you can define a default value when the key is not found and it doesn't raise KeyError.</p>
+                        <p>For example, with <b>int</b> as default_factory </p>
+                        <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Honorificabilitudinitatibus&quot;</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+    <span class="n">d</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1"># Doesn&#39;t raise KeyError</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="c1">#defaultdict(&lt;type &#39;int&#39;&gt;, {&#39;a&#39;: 2, &#39;c&#39;: 1, &#39;b&#39;: 2, &#39;d&#39;: 1, &#39;f&#39;: 1, &#39;i&#39;: 7, &#39;H&#39;: 1, &#39;l&#39;: 1, &#39;o&#39;: 2, &#39;n&#39;: 2, &#39;s&#39;: 1, &#39;r&#39;: 1, &#39;u&#39;: 2, &#39;t&#39;: 3})</span>
+</pre></div>
+
+                        <p>With <b>list</b> as default_factory: </p>
+                        <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">])</span> <span class="c1"># []</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1"># defaultdict(&lt;type &#39;list&#39;&gt;, {&#39;a&#39;: [1, 2], &#39;c&#39;: [], &#39;b&#39;: [5]})</span>
+</pre></div>
+
+                        <p>You can use more default values as <b>set</b> or <b>dict</b> and also you can define your own constant function with the use of <b>itertools.repeat</b> [1]</p>
+                        <p><b>defaultdict</b> can improve the redability and the maintenance and sometimes the performance, but actually, the keyword <b>in</b> for checking a key in a dictionary is really fast</p>
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/collections.html#defaultdict-objects">docs.python.org - defaultdict objects</a> </p>
+                    </div>
+                </div>
+                <!-- END defaultdict -->
+
+                <!-- BEGIN namedtuple -->
+                <div class="panel panel-primary idiom-panel" id="namedtuple-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            collections.<b>namedtuple</b>
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p><b>namedTuple is a factory functions for creating tuples with fields that can be accessible by attribute lookup as well as being indexable and iterable [1]</b> They are useful for storing the results of some functions. For example, in the next case it returns a point, but you is not really readable:</p>
+                        <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_point</span><span class="p">():</span>
+    <span class="c1"># ...</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mf">2.0</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.5</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+<span class="n">point</span> <span class="o">=</span> <span class="n">get_point</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># not readable</span>
+</pre></div>
+
+                        <p>You can also unpack the point with <code>x, y = get_point()</code>, but you get 2 variables and for multiple points it could be confusing. The alternative is the use of namedTuple:</p>
+                        <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+
+<span class="k">def</span> <span class="nf">get_point</span><span class="p">():</span>
+    <span class="n">point</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;point&quot;</span><span class="p">,</span> <span class="s2">&quot;x y&quot;</span><span class="p">)</span>
+    <span class="c1"># ...</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mf">2.0</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.5</span>
+    <span class="k">return</span> <span class="n">point</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">point</span> <span class="o">=</span> <span class="n">get_point</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">point</span><span class="o">.</span><span class="n">y</span><span class="p">)</span> <span class="c1"># better</span>
+</pre></div>
+
+                        <p>It is more readable, easier to use and more maintainable</p>
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/collections.html#collections.namedtuple">docs.python.org - namedtuple</a></p>
+                    </div>
+                </div>
+                <!-- END namedtuple -->
+
+                <!-- BEGIN deque -->
+                <div class="panel panel-primary idiom-panel" id="deque-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            collections.<b>deque</b>
+                            <span class="label label-default">Performance</span>
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p><b>deque</b> (double-ended-queue) is a generalization of queues and stacks. It supports thread-safe and memory efficient, with approximately O(1) performance.</p>
+                        <p>One example of the use of deque methods is shown below:</p>
+                        <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">deque</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1"># deque([1, 2, 3, 4])</span>
+<span class="n">d</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">popleft</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="c1"># deque([1, 2, 3, 4])</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/collections.html#deque-objects">docs.python.org - deque objects</a> </p>
+                    </div>
+                </div>
+                <!-- END deque -->
+
+                <!-- BEGIN counter -->
+                <div class="panel panel-primary idiom-panel" id="counter-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            collections.<b>Counter</b>
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Counter is a dict subclass for counting objects. It supports 3 methods: <em>elements()</em>, <em>most_common([n])</em> and <em>substract([iterable-or-mapping])</em> </p>
+                        <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Honorificabilitudinitatibus&quot;</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="c1"># Counter from iterable</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s1">&#39;i&#39;</span><span class="p">])</span> <span class="c1"># 7</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">elements</span><span class="p">()))</span> <span class="c1"># [&#39;a&#39;, &#39;a&#39;, &#39;c&#39;, &#39;b&#39;, &#39;b&#39;, &#39;d&#39;, &#39;f&#39;, &#39;i&#39;, &#39;i&#39;, &#39;i&#39;, &#39;i&#39;, &#39;i&#39;, &#39;i&#39;, &#39;i&#39;, &#39;H&#39;, &#39;l&#39;, &#39;o&#39;, &#39;o&#39;, &#39;n&#39;, &#39;n&#39;, &#39;s&#39;, &#39;r&#39;, &#39;u&#39;, &#39;u&#39;, &#39;t&#39;, &#39;t&#39;, &#39;t&#39;]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">most_common</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span> <span class="c1"># [(&#39;i&#39;, 7), (&#39;t&#39;, 3), (&#39;a&#39;, 2), (&#39;b&#39;, 2)]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c1"># Counter({&#39;i&#39;: 7, &#39;t&#39;: 3, &#39;a&#39;: 2, ...</span>
+<span class="n">c</span><span class="o">.</span><span class="n">subtract</span><span class="p">([</span><span class="s1">&#39;i&#39;</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="c1"># Counter({&#39;i&#39;: 6, &#39;t&#39;: 3, &#39;a&#39;: 2,</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/collections.html#collections.Counter">docs.python.org - Counter</a> </p>
+                    </div>
+                </div>
+                <!-- END counter -->
+
+                <!-- BEGIN classmethod-dec -->
+                <div class="panel panel-primary idiom-panel" id="classmethod-dec-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            @classmethod
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>A class method is the function that belongs to the class. It receives the class as first argument and doesn't need an instance of the class to be called. <b>@classmethod</b> is a function decorator for a class-method.</p>
+                        <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;I am a method of A&#39;s instance :)&quot;</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">class_foo</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;I am a class_method, I know about the class :)&quot;</span><span class="p">,</span> <span class="bp">cls</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">class_foo</span><span class="p">())</span> <span class="c1"># (&#39;I am a class_method, I know about the class :)&#39;, &lt;class &#39;__main__.A&#39;&gt;)</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/functions.html#classmethod">docs.python.org - classmethod</a> </p>
+                    </div>
+                </div>
+                <!-- END classmethod-dec -->
+
+                <!-- BEGIN staticmethod-dec -->
+                <div class="panel panel-primary idiom-panel" id="staticmethod-dec-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            @staticmethod
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>A static method doesn't receive an implicit first argument, therefore that method "doesn't have" any reference to the class from inside. <b>@staticmethod</b> is a function decorator for a static-method.</p>
+                        <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;I am a method of A&#39;s instance :)&quot;</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">static_foo</span><span class="p">():</span>
+        <span class="k">return</span> <span class="s2">&quot;I am a static_method, I don&#39;t know about the class :)&quot;</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">static_foo</span><span class="p">())</span> <span class="c1"># I am a static_method, I don&#39;t know about the class :)</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/functions.html#staticmethod">docs.python.org - staticmethod</a> </p>
+                    </div>
+                </div>
+                <!-- END staticmethod-dec -->
+
+                <!-- BEGIN zip -->
+                <div class="panel panel-primary idiom-panel" id="zip-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            zip
+                            <span class="label label-default">readability</span>
+                            <span class="label label-default">performance</span>
+                       </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>This built-in returns a generator of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables [1].</p>
+                        <div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Alexander&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">]</span>
+<span class="n">marks</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">mark</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">marks</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mark</span><span class="p">)</span>
+
+<span class="c1"># Jhon 5.5</span>
+<span class="c1"># Alexander 7</span>
+<span class="c1"># Bob 10</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/functions.html#zip">docs.python.org - zip</a> </p>
+                    </div>
+                </div>
+                <!-- END zip -->
+
+
+                <!-- BEGIN itertools -->
+                <div class="panel panel-primary idiom-panel" id="itertools-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            <b>itertools</b>
+                            <span class="label label-default">readability</span>
+                            <span class="label label-default">performance</span>
+                       </h2>
+                    </div>
+                    <div class="panel-body">
+                        <h3>iziplong</h3>
+                        <p>This function is like zip, generate a iterator of tuples from each of the argument sequences. If any sequence is shorter, Generates a new iterator from all the iterables given. If any iterable is shorter, the last tuples are formed from the largest tuple and a default value giver or None.</p>
+                        <p>Better explained with one example:</p>
+                        <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">izip_longest</span>
+
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Alexander&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">]</span>
+<span class="n">marks</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">mark</span> <span class="ow">in</span> <span class="n">izip_longest</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">marks</span><span class="p">,</span> <span class="n">fillvalue</span><span class="o">=</span><span class="s2">&quot;absent&quot;</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">name</span><span class="p">,</span> <span class="n">mark</span>
+
+<span class="c1"># Jhon 5.5</span>
+<span class="c1"># Alexander 7</span>
+<span class="c1"># Bob 10</span>
+<span class="c1"># Alice absent</span>
+</pre></div>
+
+
+                        <h3>starmap</h3>
+                        <p> <b>starmap</b> is like map (cumputes a function using arguments obtained from iterable arguments), but the difference is that the iterable here is a tuple </p>
+                        <p> <code>map(func, iter1, iter2)</code> is similar to <code>starmap(func, map(iter1, iter2))</code> </p>
+                        <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">starmap</span>
+<span class="n">items</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">)]</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">starmap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
+<span class="k">print</span> <span class="nb">list</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="c1"># res is an iterator</span>
+<span class="c1"># [7, 16, 27]</span>
+</pre></div>
+
+
+                        <h3>tee</h3>
+                        <p>This a useful function to return <em>n</em> independent iterators from a single iterator. Important: When a copy is made, the original iterator shouldn't be used because the copies could get advanced without the tee objects being informed</p>
+                        <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">tee</span>
+
+<span class="n">it</span> <span class="o">=</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">it1</span><span class="p">,</span> <span class="n">it2</span><span class="p">,</span> <span class="n">it3</span> <span class="o">=</span> <span class="n">tee</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">it1</span><span class="o">.</span><span class="n">next</span><span class="p">()</span> <span class="c1"># 0</span>
+<span class="k">print</span> <span class="n">it2</span><span class="o">.</span><span class="n">next</span><span class="p">()</span> <span class="c1"># 0</span>
+<span class="k">print</span> <span class="n">it2</span><span class="o">.</span><span class="n">next</span><span class="p">()</span> <span class="c1"># 1</span>
+<span class="k">print</span> <span class="n">it3</span><span class="o">.</span><span class="n">next</span><span class="p">()</span> <span class="c1"># 0</span>
+</pre></div>
+
+
+                        <h3>groupby</h3>
+                        <p>It is useful to group an interable given a function. For example:</p>
+                        <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">groupby</span>
+
+<span class="c1"># Show the words with the same initial letter together</span>
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;house&quot;</span><span class="p">,</span> <span class="s2">&quot;car&quot;</span><span class="p">,</span> <span class="s2">&quot;function&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">]</span>
+
+<span class="c1"># words MUST be sorted</span>
+<span class="n">words_sorted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groupby</span><span class="p">(</span><span class="n">words_sorted</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+    <span class="k">print</span> <span class="nb">list</span><span class="p">(</span><span class="n">group</span><span class="p">)</span> <span class="c1"># group is iterator</span>
+
+<span class="c1"># [&#39;car&#39;, &#39;cat&#39;, &#39;class&#39;]</span>
+<span class="c1"># [&#39;dog&#39;]</span>
+<span class="c1"># [&#39;foo&#39;, &#39;function&#39;]</span>
+<span class="c1"># [&#39;house&#39;]</span>
+</pre></div>
+
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/itertools.html#itertools.izip_longest">docs.python.org - izip</a> </p>
+                        <p>[2] <a href="https://docs.python.org/3/library/itertools.html#itertools.starmap">docs.python.org - starmap</a> </p>
+                        <p>[3] <a href="https://docs.python.org/3/library/itertools.html#itertools.tee">docs.python.org - tee</a> </p>
+                        <p>[4] <a href="https://docs.python.org/3/library/itertools.html#itertools.groupby">docs.python.org - groupby</a> </p>
+
+
+                    </div>
+                </div>
+                <!-- END itertools -->
+
+                <!-- BEGIN itertools-izip
+                <div class="panel panel-primary idiom-panel" id="itertools-izip-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            itertools.<b>izip</b>
+                            <span class="label label-default">readability</span>
+                            <span class="label label-default">performance</span>
+                       </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>This function is like zip, except that it returns an iterator instead of a list. Returns an iterator of tuples, where the i-th tuple contains the i-th element from each of the argument sequences or iterables</p>
+                        <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">izip</span>
+
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Alexander&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">]</span>
+<span class="n">marks</span> <span class="o">=</span> <span class="p">[</span><span class="mf">5.5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">mark</span> <span class="ow">in</span> <span class="n">izip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">marks</span><span class="p">):</span>
+    <span class="k">print</span> <span class="n">name</span><span class="p">,</span> <span class="n">mark</span>
+
+<span class="c1"># Jhon 5.5</span>
+<span class="c1"># Alexander 7</span>
+<span class="c1"># Bob 10</span>
+</pre></div>
+
+                        Is also faster than zip. If we run the examples from zip and izip, we obtain the similar results multiple times:
+                        <pre>
+                            zip:  0.00105381011963
+                            izip: 0.00050616264343
+                        </pre>
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/2/library/itertools.html#itertools.izip">docs.python.org - izip</a> </p>
+                    </div>
+                </div>
+                END itertools-izip -->
+
+                <!-- BEGIN functools-total_ordering -->
+                <div class="panel panel-primary idiom-panel" id="functools-total_ordering-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            functools.<b>@total_ordering</b>
+                            <span class="label label-default">readability</span>
+                       </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Given a class defining one comparison ordering methods (<em>>, <, >=, <=</em>) and <em>==</em> , this class decorator supplies the rest. </p>
+                        <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">total_ordering</span>
+
+<span class="nd">@total_ordering</span>
+<span class="k">class</span> <span class="nc">Rectangle</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">height</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">width</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rect</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">rect</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="n">rect</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rect</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">width</span><span class="p">)</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">rect</span><span class="o">.</span><span class="n">height</span> <span class="o">*</span> <span class="n">rect</span><span class="o">.</span><span class="n">width</span><span class="p">)</span>
+
+<span class="n">r1</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">r1</span> <span class="o">&gt;</span> <span class="n">r2</span><span class="p">)</span> <span class="c1"># True</span>
+<span class="k">print</span><span class="p">(</span><span class="n">r1</span> <span class="o">&lt;</span> <span class="n">r2</span><span class="p">)</span> <span class="c1"># False</span>
+<span class="k">print</span><span class="p">(</span><span class="n">r1</span> <span class="o">&gt;=</span> <span class="n">r2</span><span class="p">)</span> <span class="c1"># True</span>
+<span class="k">print</span><span class="p">(</span><span class="n">r1</span> <span class="o">&lt;=</span> <span class="n">r2</span><span class="p">)</span> <span class="c1"># False</span>
+<span class="k">print</span><span class="p">(</span><span class="n">r1</span> <span class="o">==</span> <span class="n">r2</span><span class="p">)</span> <span class="c1"># False</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/functools.html#functools.total_ordering">docs.python.org - @total_ordering</a> </p>
+                    </div>
+                </div>
+                <!-- END functools-total_ordering -->
+
+                <!-- BEGIN map -->
+                <div class="panel panel-primary idiom-panel" id="map-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            map
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Apply function to every item of iterable and return a list of the results. [1]</p>
+                        <div class="highlight"><pre><span></span><span class="n">transformed_data</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">my_function</span><span class="p">,</span> <span class="n">iterable_data</span><span class="p">)</span>
+</pre></div>
+
+                        <h3>No Pythonic</h3>
+                        <p>In this case we can see a how to compute the square of a list of numbers</p>
+                        <div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">square</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="n">square</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+                        <h3>Pythonic</h3>
+                        <p>A better way of doing that is with the use of map. In this case it applies a lambda function:</p>
+                        <div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="k">print</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+
+                        <p>But the more pythonic way could be done with the use of <a href="/catalogue#list-comprehension">list comprehensions</a> in this case</p>
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/functions.html#map">docs.python.org - map</a> </p>
+                    </div>
+                </div>
+                <!-- END map -->
+
+                <!-- BEGIN filter -->
+                <div class="panel panel-primary idiom-panel" id="filter-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            filter
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Construct a list from those elements of iterable for which function returns true. [1]</p>
+                        <div class="highlight"><pre><span></span><span class="nb">filter</span><span class="p">(</span><span class="n">boolean_function</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
+</pre></div>
+
+                        <h3>No Pythonic</h3>
+                        <div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">result</span>
+</pre></div>
+
+                        <h3>Pythonic</h3>
+                        <div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/library/functions.html#filter">docs.python.org - filter</a> </p>
+                    </div>
+                </div>
+                <!-- END filter -->
+
+                <!-- BEGIN reduce -->
+                <div class="panel panel-primary idiom-panel" id="reduce-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            reduce
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Apply function of two arguments cumulatively to the items of iterable, from left to right, so as to reduce the iterable to a single value. [1]</p>
+                        <div class="highlight"><pre><span></span><span class="nb">reduce</span><span class="p">(</span><span class="n">func_for_operation</span><span class="p">,</span> <span class="n">items</span><span class="p">)</span>
+</pre></div>
+
+                        <h3>No Pythonic</h3>
+                        <div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">+=</span> <span class="n">n</span>
+
+<span class="k">print</span> <span class="n">result</span>
+</pre></div>
+
+                        <h3>Pythonic</h3>
+                        <div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+
+<span class="k">print</span> <span class="n">result</span>
+</pre></div>
+
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/2/library/functions.html#reduce">docs.python.org - reduce</a> </p>
+                    </div>
+                </div>
+                <!-- END reduce -->
+
+                <!-- BEGIN lambda -->
+                <div class="panel panel-primary idiom-panel" id="lambda-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            lambda
+                            <span class="label label-default">Readability</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>lambda is a keyword of Python that allows to construct anonymus functions in one line</p>
+                        <p>The simpliest example can be shown below:</p>
+                        <div class="highlight"><pre><span></span><span class="n">add_one</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">add_one</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># 3</span>
+</pre></div>
+
+                        <p>But it can be applied to map, filter and reduce. Or other functions:</p>
+                        <div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="c1"># [0, -1, 1, -2, 2, -3, 3, -4, 4, -5, 5, -6, 6, -7, 7, -8, 8, -9, 9, -10]</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://docs.python.org/3/tutorial/controlflow.html#lambda-expressions">docs.python.org - lambda</a> </p>
+                    </div>
+                </div>
+                <!-- END lambda -->
+
+                <!-- BEGIN dictionary -->
+                <div class="panel panel-primary idiom-panel" id="dict-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            dictionaries
+                            <span class="label label-default">Readability</span>
+                            <span class="label label-default">Performance</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>Dictionaries in Python are like objects in Java. This kind of structures allows you to store items indexed by a key. This structures are basic in Python, and could be very powerful if you know how to manage them.</p>
+                        <h3>Get a value.</h3>
+                        <p>There are multiple ways, but one idiomatic practice in Python is EAFP (it's Easier to Ask for Forgiveness than Permission). Jeff Knupp explain it in one of his articles [1]. Here we describe multiples examples:</p>
+                        <ul>
+                            <li>Catching the exception (EAFP):</li>
+                            <div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">my_value</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">]</span>
+<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Key not found&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+                            <li>Look Before You Leap (LBYL): Opposite for the EAFP principle:</li>
+                            <div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;k&#39;</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="p">:</span>
+    <span class="n">my_value</span> <span class="o">=</span> <span class="n">my_dict</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+                            <li>dict.get(key, default): Try to get the value and if does not exist, retrieve a default value</li>
+                            <div class="highlight"><pre><span></span><span class="n">my_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+                            <li><a href="#defaultdict">collections.defaultdict</a></li>
+                        </ul>
+
+                        <h3>Create a dictionary.</h3>
+                        <p>The default way could be with the use of <code>d = dict()</code> or <code>d = {}</code>, but it can be also accomplised with the use of dict comprehensions as we explain in other section:</p>
+                        <div class="highlight"><pre><span></span><span class="n">dict_compr</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">k</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)}</span>
+</pre></div>
+
+
+                        <h3>Iterate over keys and values:</h3>
+                        <p>If you want a copy of the dictionary's list, you can use <code>dict.items()</code> and returns a list with (key, value) pairs.
+                        But if you want to iterate over the dictionary is better to use an iterator:</p>
+                        <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+</pre></div>
+
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://jeffknupp.com/blog/2013/02/06/write-cleaner-python-use-exceptions/">Jeff Knupp - Write Cleaner Python: Use Exceptions</a> </p>
+                    </div>
+                </div>
+                <!-- END dictionary -->
+
+                <!-- BEGIN seq-op -->
+                <div class="panel panel-primary idiom-panel" id="seq-op-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            * and + for sequences
+                            <span class="label label-default">Performance</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <p>In order to concatenate multiple copies of the same sequence, the most Pythonic approach is with the use of <code>*</code>:</p>
+                        <div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">l</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1"># [1, 2, 3, 1, 2, 3, 1, 2, 3]</span>
+</pre></div>
+
+                        <p>For concatenating 2 list, the best approach is to sum them up:</p>
+                        <div class="highlight"><pre><span></span><span class="n">l_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">l_2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">l_1</span> <span class="o">+</span> <span class="n">l_2</span><span class="p">)</span>
+<span class="c1"># [1, 2, 3, 4, 5, 6]</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] "Fluent Python" - Using + and * with sequences</p>
+                    </div>
+                </div>
+                <!-- END seq-op -->
+
+                <!-- BEGIN str-op -->
+                <div class="panel panel-primary idiom-panel" id="str-op-idiom">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">
+                            Pythonic operations over strings
+                            <span class="label label-default">Performance</span>
+                        </h2>
+                    </div>
+                    <div class="panel-body">
+                        <h2>str.<b>format()</b></h2>
+                        <p>Sometimes, for creating a new string is necessary to concatenate multiple strings</p>
+                        <h3>No pythonic</h3>
+                        <div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> is </span><span class="si">%i</span><span class="s2"> years old&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&quot;Peter&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="c1"># Peter is 50 years old</span>
+</pre></div>
+
+                        <div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Peter&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">}</span>
+<span class="n">my_str</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; is &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="s2">&quot; years old&quot;</span>
+<span class="c1"># Peter is 50 years old</span>
+</pre></div>
+
+                        <h3>Pythonic</h3>
+                        <p>The best way is the use of .format() method. It has less disadvantages and is more powerful:</p>
+                        <div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;{} is {} years old&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Peter&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="c1"># Peter is 50 years old</span>
+
+<span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;{0} is {1} years old. {1} years old!&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Peter&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="c1"># Peter is 50 years old. 50 years old!</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Peter&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">}</span>
+<span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;{name} is {age} years old.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">data</span><span class="p">)</span>
+<span class="c1"># Peter is 50 years old.</span>
+
+<span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;{p[name]} is {p[age]} years old.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="c1"># Peter is 50 years old.</span>
+</pre></div>
+
+
+                        <h2>str.<b>join()</b></h2>
+                        <p>When you have to concatenate multiple string from a finite sequence, the easiest way could be a for-loop, but there is one better</p>
+                        <h3>No Pythonic</h3>
+                        <div class="highlight"><pre><span></span><span class="n">out_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">out_str</span> <span class="o">+=</span> <span class="s1">&#39;{},&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+<span class="c1"># 0,1,2,3,4,5,6,7,8,9,</span>
+</pre></div>
+
+                        <h3>Pythonic</h3>
+                        <p>The use of join is simpliest, with better results and better performance [2]</p>
+                        <div class="highlight"><pre><span></span><span class="n">out_str</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="c1"># 0,1,2,3,4,5,6,7,8,9</span>
+</pre></div>
+
+                        <hr>
+                        <h4>References:</h4>
+                        <p>[1] <a href="https://pyformat.info/">Using % and .format() for great good!</a> </p>
+                        <p>[2] <a href="https://waymoot.org/home/python_string/">Efficient string concatenation</a> </p>
+
+                    </div>
+                </div>
+                <!-- END str-op -->
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="/js/creative.js"></script>
+    <script src="/js/common.js"></script>
+
+
+<script type="text/javascript">
+    /*$('#filter-idioms')*/
+    $('.idiom-item').click(function (ev) {
+        $('.idiom-panel').hide();
+        $("#" + $(this).attr("id").split("-link")[0] + "-idiom").show();
+        $('html,body').scrollTop(0);
+    });
+    $('.tag-filter').click(function (ev) {
+        ev.preventDefault();
+        $('.tag-filter').removeClass('label-primary').addClass('label-default'); /*All to default*/
+        $(this).removeClass('label-default').addClass('label-primary'); /*this to primary*/
+
+        var tag = $(this).html().toLowerCase();
+        if (tag == "all") {
+            $('.idiom-item').show()
+        } else {
+            $('.idiom-item').hide()
+            $('.idiom-item.' + tag).show()
+        }
+    });
+    $(document).ready(function (e) {
+        $('.idiom-panel').hide(); /*hide all panels*/
+        var url = document.URL;
+        var idx = url.indexOf('#');
+        if (idx == -1) {
+            $("#list-comprehension-idiom").show();
+            return
+        }
+        var idiom = url.substring(idx+1);
+        $("#" + idiom + "-idiom").show();
+        $('html,body').scrollTop(0);
+    });
+    $('#filter-idioms').keyup(function (ev) {
+        var search = $(this).val();
+        var idioms = $('.idiom-item');
+        for (var i=0; i< idioms.length; i++){
+            if( $(idioms[i]).html().toLowerCase().includes(search) ) {
+                $(idioms[i]).show();
+            } else {
+                $(idioms[i]).hide();
+            }
+        }
+    });
+
+</script>
+
+    <!--<script src="/static/js/analyzer.js"></script>-->
+</body>
+
+</html>
